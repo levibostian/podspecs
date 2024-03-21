@@ -1,0 +1,23 @@
+
+on: 
+  workflow_dispatch:
+    inputs:
+      podspec_file:
+        description: 'The name of the podspec file'
+        required: true
+        default: 'MyPod.podspec'
+
+jobs:
+  deploy:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install latest CocoaPods
+        run: gem install cocoapods
+
+      - name: Deploy podspec
+        run: pod trunk push ${{ github.event.inputs.podspec_file }}
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
