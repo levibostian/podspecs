@@ -1,5 +1,5 @@
 tag_to_deploy = '0.0.8'
-version_to_deploy = "#{tag_to_deploy}.pod.1"
+version_to_deploy = "#{tag_to_deploy}-pod.1"
 
 Pod::Spec.new do |spec|
   spec.name = 'groue_Semaphore'
