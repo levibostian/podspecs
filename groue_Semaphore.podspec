@@ -1,4 +1,4 @@
-tag_to_deploy = '0.0.8'
+tag_to_deploy = '0.1.0'
 version_to_deploy = "#{tag_to_deploy}-pod.1"
 
 Pod::Spec.new do |spec|
